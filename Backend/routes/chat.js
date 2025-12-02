@@ -1,6 +1,5 @@
 import express, { Router } from "express";
 import Thread from "../models/thread.js";
-import thread from "../models/thread.js";
 import getOpenAIAPIResponse from "../utils/openai.js";
 
 const router = express.Router();
@@ -35,7 +34,7 @@ router.get("/thread/:threadId", async (req, res) => {
     const { threadId } = req.params;
 
     try {
-        await Thread.findOne({ threadId });
+        const thread = await Thread.findOne({ threadId });
 
         if (!thread) {
             res.status(404).json({ error: "Thread not found" });
@@ -74,10 +73,10 @@ router.post("/chat", async (req, res) => {
 
     try {
 
-        const thread = await Thread.findOne({threadId});
+        let thread = await Thread.findOne({threadId});
 
         if(!thread){
-            // create a new thread
+            // create a new thread in DB
             thread = new Thread({
                 threadId,
                 title: message,
