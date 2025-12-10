@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext";
 import { v1 as uuidv1 } from "uuid";
-import { API_BASE } from "./config";
+import { API_BASE } from "./config.js";
 
 function Sidebar() {
   const {
