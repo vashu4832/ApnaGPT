@@ -2,8 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext";
 import { v1 as uuidv1 } from "uuid";
-
-const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:8080";
+import { API_BASE } from "./config";
 
 function Sidebar() {
   const {
