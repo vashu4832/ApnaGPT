@@ -118,7 +118,7 @@ function Sidebar() {
       <section className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <button onClick={createNewChat}>
           <img
-            src="src/assets/blacklogo.png"
+            src="https://cdn.iconscout.com/icon/free/png-512/free-openai-chatgpt-icon-svg-download-png-14549095.png?f=webp&w=512"
             alt="gpt-logo"
             className="logo"
           ></img>
